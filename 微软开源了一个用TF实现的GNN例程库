@@ -1,0 +1,97 @@
+微软开源了一个用TF实现的GNN例程库
+CV君 我爱计算机视觉 昨天
+点击我爱计算机视觉标星，更快获取CVML新技术
+
+
+
+
+
+
+
+2019年接近尾声，许多学术机构盘点本年度AI领域技术关键词总少不了图神经网络（GNN），业界渐成共识：CNN处理图像视频等矩阵数据、RNN处理序列数据，GNN处理图结构数据。
+
+
+
+之前跟大家分享过：
+
+一文带你入门目前大热的图神经网络
+
+58页PPT揭示图神经网络研究最新进展
+
+都是比较新的GNN学习资料，感兴趣的朋友不妨学习。
+
+
+
+今天在Github上看到微软开源了一个 TensorFlow 实现的图神经网络例程代码库，应该是相对高质量的。
+
+
+
+代码地址：
+
+https://github.com/microsoft/tf-gnn-samples
+
+
+
+开源这份代码的是微软剑桥 Deep Program Understanding 组开源的，实现了一系列特征线性调和的图神经网络（GNN-FiLM: Graph Neural Networks with Feature-wise Linear Modulation，2019），包含GNN的网络架构：
+
+
+
+Gated Graph Neural Networks (GGNN) (Li et al., 2015).
+
+Relational Graph Convolutional Networks (RGCN) (Schlichtkrull et al., 2016).
+
+Relational Graph Attention Networks (RGAT) (Veličković et al., 2018).
+
+Relational Graph Isomorphism Networks (RGIN) (Xu et al., 2019) .
+
+Graph Neural Network with Edge MLPs (GNN-Edge-MLP) 
+
+Relational Graph Dynamic Convolution Networks (RGDCN) 
+
+Graph Neural Networks with Feature-wise Linear Modulation (GNN-FiLM) 
+
+
+
+训练和测试都仅需要一行命令，比如：
+
+python train.py RGCN PPI
+
+
+python test.py trained_models/PPI_RGCN_2019-06-26-14-33-58_17208_best_model.pickle
+
+
+当前一些GNN实现的任务例子：
+
+
+
+Citation networks
+
+python train.py MODEL Cora (or Pubmed or Citeseer instead of Cora)
+
+
+PPI
+
+python train.py MODEL PPI
+python run_ppi_benchs.py ppi_results/
+
+
+QM9
+
+python train.py MODEL QM9
+python run_qm9_benchs.py qm9_results/
+
+
+VarMisuse
+
+python train.py MODEL VarMisuse
+python run_varmisuse_benchs.py varmisuse_results/
+
+
+目前该库已有200+ 星，欢迎大家参考。
+
+
+
+代码地址：
+
+https://github.com/microsoft/tf-gnn-samples
+
